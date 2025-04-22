@@ -14,26 +14,26 @@ void Simulation::activateBody(const sf::Vector2f& vel) {
   bodies.back().activate();
 }
 
-// VV method
+/*
+ * velocity Verlet method
+ *  update position of body using current acceleration (a_t)
+ *  compute new acceleration (a_t+1)
+ *  use a(t) and a(t + Δt) to get new velocity
+ */
 void Simulation::update() {
-  // *** update position of body using current acceleration and velocity ***
   for (auto& body : bodies) {
     body.updatePosition(timestep);
     body.storeAcceleration();
   }
-  // compute new acceleration
+
   computeAccelerations();
 
-  // update velocity
-  for (auto& body : bodies) {
-    body.updateVelocity(timestep);
-  }
+  for (auto& body : bodies) body.updateVelocity(timestep);
 }
 
 const std::vector<Body>& Simulation::getBodies() const { return bodies; }
 
 void Simulation::computeAccelerations() {
-  // compute new acceleration
   for (size_t i = 0; i < bodies.size(); ++i) {
     if (!bodies[i].isActive()) continue;
     for (size_t j = 0; j < bodies.size(); ++j) {
