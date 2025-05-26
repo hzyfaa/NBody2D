@@ -1,6 +1,9 @@
 # NBody2D
 Interactive 2D N-body simulation built using C++ and SFML featuring velocity Verlet algorithm for stable and accurate motion.
 
+## Demo
+![demo](https://github.com/user-attachments/assets/4f4e8fec-2629-4c4c-adc3-06545ae2ecf2)
+
 ## Requirements
 - C++20 (or C++17)
 - SFML 2.6.x (fetched via CMake)
