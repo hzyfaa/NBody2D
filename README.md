@@ -2,7 +2,7 @@
 Interactive 2D N-body simulation built using C++ and SFML featuring velocity Verlet algorithm for stable and accurate motion.
 
 ## Requirements
-- C++20 compiler (or C++17)
+- C++20 (or C++17)
 - SFML 2.6.x (fetched via CMake)
 - CMake 3.28 or later
 
