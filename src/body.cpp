@@ -1,8 +1,8 @@
 #include "body.h"
 
-Body::Body(sf::Vector2f pos, sf::Vector2f vel)
-    : velocity(vel),
-      mass(DEFAULT_MASS),
+Body::Body(const sf::Vector2f pos, const sf::Vector2f vel)
+    : mass(DEFAULT_MASS),
+      velocity(vel),
       acceleration(0.f, 0.f),
       prevAcceleration(0.f, 0.f),
       active(false) {
@@ -33,13 +33,13 @@ void Body::storeAcceleration() {
   acceleration = sf::Vector2f(0.0f, 0.0f);
 }
 
-void Body::updatePosition(float dt) {
+void Body::updatePosition(const float dt) {
   if (!active) return;
   // P_t+1 = P_t + (V_t * dt) + ((A_t)/2 * dt^2)
   shape.move(velocity * dt + 0.5f * acceleration * dt * dt);
 }
 
-void Body::updateVelocity(float dt) {
+void Body::updateVelocity(const float dt) {
   if (!active) return;
   // V_t+1 = V_t + ((A_t + A_t+1)/2 * dt)
   velocity += 0.5f * (prevAcceleration + acceleration) * dt;

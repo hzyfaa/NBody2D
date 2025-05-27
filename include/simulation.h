@@ -8,16 +8,20 @@
 class Simulation {
  private:
   std::vector<Body> bodies;
-  float timestep;
+  int width;
+  int height;
+  float timestep = 1.0f / 60.0f;
 
  public:
-  Simulation(float dt = 1.0f / 60.0f);
+  Simulation(int width, int height);
   void addBody(const sf::Vector2f& pos, const sf::Vector2f& vel);
   void update();
-  void clearOffScreenBodies(const sf::RenderWindow& window);
+  void clearOffScreenBodies();
   const std::vector<Body>& getBodies() const;
   void activateBody(const sf::Vector2f& vel);
-  void computeAccelerations();
+  void updateAccelerations();
+  void updatePositions();
+  void updateVelocities();
 };
 
 #endif
