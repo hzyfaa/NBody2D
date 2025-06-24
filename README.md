@@ -1,8 +1,14 @@
 # NBody2D
-Interactive 2D N-body simulation built using C++ and SFML featuring velocity Verlet algorithm for stable and accurate motion.
+Interactive 2D N-body simulation built using C++ and SFML
 
 ## Demo
 ![demo](https://github.com/user-attachments/assets/4f4e8fec-2629-4c4c-adc3-06545ae2ecf2)
+
+## Features
+- Barnes-Hut algorithm for efficient gravitational force computation
+- Velocity Verlet integration for stable and accurate motion
+- Collisions
+- Interactive body spawning
 
 ## Requirements
 - C++20 (or C++17)
@@ -38,4 +44,3 @@ Interactive 2D N-body simulation built using C++ and SFML featuring velocity Ver
 ## Usage
 - Hold left click + drag: spawn body and draw vector
 - Release mouse: launch body
-- Bodies off-screen are cleaned up
